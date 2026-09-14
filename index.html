@@ -1,620 +1,630 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Nostre Nozze di Carta 💍📜</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Lora', serif;
-        background-color: #faf6f0;
-        color: #2c1810;
-        overflow-x: hidden;
-      }
-
-      /* ===== HEADER ===== */
-      .header {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem;
-        position: relative;
-        background: 
-          radial-gradient(ellipse at 20% 50%, rgba(200, 180, 140, 0.1) 0%, transparent 50%),
-          radial-gradient(ellipse at 80% 20%, rgba(200, 180, 140, 0.08) 0%, transparent 50%),
-          #faf6f0;
-      }
-
-      .header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(225deg, #f0e8d8 50%, transparent 50%);
-      }
-
-      .wax-seal {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, #e8a5ae, #c4727f);
-        box-shadow: 
-          0 3px 10px rgba(196, 114, 127, 0.4),
-          inset 0 -2px 4px rgba(0,0,0,0.2),
-          inset 0 2px 4px rgba(255,255,255,0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Great Vibes', cursive;
-        color: white;
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        animation: pulse 3s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-      }
-
-      .header h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
-        color: #2c1810;
-        margin-bottom: 0.5rem;
-      }
-
-      .header h2 {
-        font-family: 'Great Vibes', cursive;
-        font-size: clamp(3rem, 8vw, 6rem);
-        color: #c4727f;
-        margin-bottom: 1.5rem;
-      }
-
-      .header-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .header-divider .line {
-        width: 80px;
-        height: 1px;
-        background: linear-gradient(to right, transparent, #c9a84c);
-      }
-
-      .header-divider .line:last-child {
-        background: linear-gradient(to left, transparent, #c9a84c);
-      }
-
-      .header p {
-        font-size: 1.1rem;
-        color: #5c3d2e;
-        max-width: 500px;
-        line-height: 1.8;
-      }
-
-      .header .quote {
-        font-style: italic;
-        color: #8b6f5e;
-        font-size: 0.95rem;
-        margin-top: 1rem;
-      }
-
-      .scroll-hint {
-        margin-top: 3rem;
-        animation: bounce 2s infinite;
-        color: #c9a84c;
-        font-size: 0.8rem;
-      }
-
-      .scroll-hint svg {
-        width: 24px;
-        height: 24px;
-        margin: 0 auto 0.5rem;
-        display: block;
-      }
-
-      @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(8px); }
-      }
-
-      /* Floating hearts */
-      .floating-heart {
-        position: absolute;
-        opacity: 0.15;
-        animation: floatHeart 8s ease-in-out infinite;
-        font-size: 2rem;
-      }
-
-      @keyframes floatHeart {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        25% { transform: translateY(-15px) rotate(5deg); }
-        75% { transform: translateY(10px) rotate(-5deg); }
-      }
-
-      /* ===== INTRO SECTION ===== */
-      .intro-section {
-        padding: 5rem 2rem;
-        display: flex;
-        justify-content: center;
-      }
-
-      .letter {
-        background: white;
-        padding: 3rem;
-        max-width: 600px;
-        box-shadow: 
-          0 4px 20px rgba(0,0,0,0.08),
-          0 1px 3px rgba(0,0,0,0.05);
-        position: relative;
-        border: 1px solid #f0e8d8;
-      }
-
-      .letter::before {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        border: 1px solid rgba(201, 168, 76, 0.2);
-        pointer-events: none;
-      }
-
-      .letter::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(225deg, #f0e8d8 50%, #e8dcc8 50%);
-      }
-
-      .letter h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
-        color: #2c1810;
-        margin-bottom: 1.5rem;
-      }
-
-      .letter p {
-        color: #5c3d2e;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-      }
-
-      .letter strong {
-        color: #8b6f5e;
-      }
-
-      .letter em {
-        color: #c4727f;
-      }
-
-      /* Stamp decoration */
-      .stamp {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        background: #faf6f0;
-        border: 2px dashed #8b6f5e;
-        padding: 8px;
-        transform: rotate(12deg);
-        text-align: center;
-      }
-
-      .stamp .heart {
-        font-size: 1.5rem;
-      }
-
-      .stamp span {
-        display: block;
-        font-size: 0.5rem;
-        color: #8b6f5e;
-        margin-top: 2px;
-      }
-
-      /* ===== TIMELINE ===== */
-      .timeline-section {
-        padding: 4rem 2rem;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .timeline-section h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        text-align: center;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-section .subtitle {
-        text-align: center;
-        color: #8b6f5e;
-        font-style: italic;
-        margin-bottom: 4rem;
-      }
-
-      .timeline {
-        position: relative;
-        padding: 2rem 0;
-      }
-
-      .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, transparent, #c9a84c 10%, #c9a84c 90%, transparent);
-        transform: translateX(-50%);
-      }
-
-      .timeline-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5rem;
-        position: relative;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-      }
-
-      .timeline-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .timeline-item:nth-child(odd) {
-        flex-direction: row;
-      }
-
-      .timeline-item:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-
-      .timeline-content {
-        width: 45%;
-        padding: 0 2rem;
-      }
-
-      .timeline-item:nth-child(odd) .timeline-content {
-        text-align: right;
-      }
-
-      .timeline-item:nth-child(even) .timeline-content {
-        text-align: left;
-      }
-
-      .timeline-dot {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: #c9a84c;
-        border: 3px solid #faf6f0;
-        box-shadow: 0 0 0 2px #c9a84c, 0 0 10px rgba(201, 168, 76, 0.3);
-        z-index: 2;
-      }
-
-      .timeline-spacer {
-        width: 45%;
-      }
-
-      /* Polaroid card */
-      .polaroid {
-        background: white;
-        padding: 12px 12px 40px 12px;
-        box-shadow: 
-          0 3px 10px rgba(0,0,0,0.1),
-          0 6px 20px rgba(0,0,0,0.05);
-        display: inline-block;
-        transition: all 0.4s ease;
-        position: relative;
-        margin-bottom: 1rem;
-      }
-
-      .polaroid::before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 12px;
-        background: rgba(201, 168, 76, 0.25);
-        border-radius: 2px;
-      }
-
-      .polaroid:hover {
-        transform: scale(1.05) rotate(0deg) !important;
-        box-shadow: 
-          0 8px 25px rgba(0,0,0,0.15),
-          0 15px 40px rgba(0,0,0,0.1);
-      }
-
-      .polaroid-img {
-        width: 200px;
-        height: 160px;
-        background: linear-gradient(135deg, #fef3c7, #fde68a);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
-
-      .polaroid-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .polaroid-img .placeholder {
-        text-align: center;
-        padding: 1rem;
-      }
-
-      .polaroid-img .placeholder .icon {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-        animation: floatHeart 4s ease-in-out infinite;
-      }
-
-      .polaroid-img .placeholder p {
-        font-size: 0.7rem;
-        color: #92400e;
-        font-style: italic;
-      }
-
-      .polaroid-date {
-        text-align: center;
-        font-size: 0.8rem;
-        color: #6b7280;
-        font-style: italic;
-        margin-top: 0.5rem;
-      }
-
-      .timeline-text .date-badge {
-        display: inline-block;
-        background: rgba(254, 243, 199, 0.8);
-        color: #92400e;
-        font-size: 0.75rem;
-        padding: 4px 12px;
-        border-radius: 20px;
-        border: 1px solid #fde68a;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-text h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.4rem;
-        color: #2c1810;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-text p {
-        color: #5c3d2e;
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-
-      /* Timeline end */
-      .timeline-end {
-        text-align: center;
-        margin-top: 3rem;
-      }
-
-      .timeline-end .seal {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, #e8a5ae, #c4727f);
-        box-shadow: 0 2px 8px rgba(196, 114, 127, 0.4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-family: 'Great Vibes', cursive;
-        font-size: 1.2rem;
-        margin: 0 auto 1rem;
-      }
-
-      .timeline-end p {
-        color: #8b6f5e;
-        font-style: italic;
-        font-size: 0.9rem;
-      }
-
-      /* ===== FOOTER ===== */
-      .footer {
-        padding: 5rem 2rem;
-        text-align: center;
-        background: linear-gradient(to bottom, transparent, rgba(254, 243, 199, 0.3));
-      }
-
-      .footer .envelope {
-        margin-bottom: 2rem;
-        font-size: 3rem;
-        opacity: 0.6;
-      }
-
-      .footer h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        color: #2c1810;
-        margin-bottom: 1rem;
-      }
-
-      .footer p {
-        color: #5c3d2e;
-        line-height: 1.8;
-        max-width: 500px;
-        margin: 0 auto 1.5rem;
-      }
-
-      .footer .signature {
-        font-family: 'Great Vibes', cursive;
-        font-size: 2rem;
-        color: #c4727f;
-        margin-top: 1.5rem;
-      }
-
-      .footer .credits {
-        font-size: 0.75rem;
-        color: #8b6f5e;
-        margin-top: 2rem;
-      }
-
-      /* ===== RESPONSIVE ===== */
-      @media (max-width: 768px) {
-        .timeline::before {
-          left: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .timeline-item,
-        .timeline-item:nth-child(even) {
-          flex-direction: column;
-          align-items: flex-start;
-          padding-left: 50px;
+        body {
+            font-family: 'Lora', serif;
+            background-color: #faf6f0;
+            color: #2c1810;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        .timeline-content {
-          width: 100%;
-          padding: 0;
+        /* ===== HEADER ===== */
+        .header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(200, 180, 140, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(200, 180, 140, 0.08) 0%, transparent 50%),
+                #faf6f0;
         }
 
-        .timeline-item:nth-child(odd) .timeline-content,
-        .timeline-item:nth-child(even) .timeline-content {
-          text-align: left;
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(225deg, #f0e8d8 50%, transparent 50%);
         }
 
-        .timeline-spacer {
-          display: none;
+        .wax-seal {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #e8a5ae, #c4727f);
+            box-shadow: 
+                0 3px 10px rgba(196, 114, 127, 0.4),
+                inset 0 -2px 4px rgba(0,0,0,0.2),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Great Vibes', cursive;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: pulse 3s ease-in-out infinite;
         }
 
-        .timeline-dot {
-          left: 20px;
-          top: 0;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .header h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: #c4727f;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .header-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .header-divider .line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c9a84c);
+        }
+
+        .header-divider .line:last-child {
+            background: linear-gradient(to left, transparent, #c9a84c);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #5c3d2e;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .header .quote {
+            font-style: italic;
+            color: #8b6f5e;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .scroll-hint {
+            margin-top: 3rem;
+            animation: bounce 2s infinite;
+            color: #c9a84c;
+            font-size: 0.8rem;
+        }
+
+        .scroll-hint svg {
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 0.5rem;
+            display: block;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.15;
+            animation: floatElement 8s ease-in-out infinite;
+            font-size: 2rem;
+            pointer-events: none;
+        }
+
+        @keyframes floatElement {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(5deg); }
+            75% { transform: translateY(10px) rotate(-5deg); }
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-section {
+            padding: 5rem 2rem;
+            display: flex;
+            justify-content: center;
         }
 
         .letter {
-          padding: 2rem 1.5rem;
+            background: white;
+            padding: 3rem;
+            max-width: 600px;
+            box-shadow: 
+                0 4px 20px rgba(0,0,0,0.08),
+                0 1px 3px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #f0e8d8;
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            pointer-events: none;
+        }
+
+        .letter::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(225deg, #f0e8d8 50%, #e8dcc8 50%);
+        }
+
+        .letter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2c1810;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .letter p {
+            color: #5c3d2e;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .letter strong {
+            color: #8b6f5e;
+        }
+
+        .letter em {
+            color: #c4727f;
+            font-style: italic;
+        }
+
+        /* Stamp decoration */
+        .stamp {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #faf6f0;
+            border: 2px dashed #8b6f5e;
+            padding: 8px;
+            transform: rotate(12deg);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .stamp .heart {
+            font-size: 1.5rem;
+        }
+
+        .stamp span {
+            display: block;
+            font-size: 0.5rem;
+            color: #8b6f5e;
+            margin-top: 2px;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline-section {
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-section .subtitle {
+            text-align: center;
+            color: #8b6f5e;
+            font-style: italic;
+            margin-bottom: 4rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #c9a84c 10%, #c9a84c 90%, transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #c9a84c;
+            border: 3px solid #faf6f0;
+            box-shadow: 0 0 0 2px #c9a84c, 0 0 10px rgba(201, 168, 76, 0.3);
+            z-index: 2;
+        }
+
+        .timeline-spacer {
+            width: 45%;
+        }
+
+        /* Polaroid card */
+        .polaroid {
+            background: white;
+            padding: 12px 12px 40px 12px;
+            box-shadow: 
+                0 3px 10px rgba(0,0,0,0.1),
+                0 6px 20px rgba(0,0,0,0.05);
+            display: inline-block;
+            transition: all 0.4s ease;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .polaroid::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 12px;
+            background: rgba(201, 168, 76, 0.25);
+            border-radius: 2px;
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            box-shadow: 
+                0 8px 25px rgba(0,0,0,0.15),
+                0 15px 40px rgba(0,0,0,0.1);
         }
 
         .polaroid-img {
-          width: 160px;
-          height: 130px;
+            width: 200px;
+            height: 160px;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-      }
+
+        .polaroid-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .polaroid-img .placeholder {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .polaroid-img .placeholder .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            animation: floatElement 4s ease-in-out infinite;
+        }
+
+        .polaroid-img .placeholder p {
+            font-size: 0.7rem;
+            color: #92400e;
+            font-style: italic;
+        }
+
+        .polaroid-date {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-text .date-badge {
+            display: inline-block;
+            background: rgba(254, 243, 199, 0.8);
+            color: #92400e;
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #fde68a;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #2c1810;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-text p {
+            color: #5c3d2e;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Timeline end */
+        .timeline-end {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .timeline-end .seal {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #e8a5ae, #c4727f);
+            box-shadow: 0 2px 8px rgba(196, 114, 127, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .timeline-end p {
+            color: #8b6f5e;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(254, 243, 199, 0.3));
+        }
+
+        .footer .envelope {
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            opacity: 0.6;
+        }
+
+        .footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #2c1810;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer p {
+            color: #5c3d2e;
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .footer .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #c4727f;
+            margin-top: 1.5rem;
+        }
+
+        .footer .credits {
+            font-size: 0.75rem;
+            color: #8b6f5e;
+            margin-top: 2rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                padding: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                text-align: left;
+            }
+
+            .timeline-spacer {
+                display: none;
+            }
+
+            .timeline-dot {
+                left: 20px;
+                top: 0;
+            }
+
+            .letter {
+                padding: 2rem 1.5rem;
+            }
+
+            .polaroid-img {
+                width: 160px;
+                height: 130px;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- HEADER -->
     <header class="header">
-      <div class="floating-heart" style="top: 10%; left: 10%; animation-delay: 0s;">💕</div>
-      <div class="floating-heart" style="top: 20%; right: 15%; animation-delay: 2s;">📜</div>
-      <div class="floating-heart" style="bottom: 25%; left: 15%; animation-delay: 4s;">💌</div>
-      <div class="floating-heart" style="bottom: 15%; right: 10%; animation-delay: 1s;">✉️</div>
+        <div class="floating-element" style="top: 10%; left: 10%; animation-delay: 0s;">💕</div>
+        <div class="floating-element" style="top: 20%; right: 15%; animation-delay: 2s;">📜</div>
+        <div class="floating-element" style="bottom: 25%; left: 15%; animation-delay: 4s;">💌</div>
+        <div class="floating-element" style="bottom: 15%; right: 10%; animation-delay: 1s;">✉️</div>
 
-      <div class="wax-seal">1°</div>
-      
-      <h1>Le Nostre</h1>
-      <h2>Nozze di Carta</h2>
-      
-      <div class="header-divider">
-        <div class="line"></div>
-        <span>💍</span>
-        <div class="line"></div>
-      </div>
+        <div class="wax-seal">1°</div>
+        
+        <h1>Le Nostre</h1>
+        <h2>Nozze di Carta</h2>
+        
+        <div class="header-divider">
+            <div class="line"></div>
+            <span>💍</span>
+            <div class="line"></div>
+        </div>
 
-      <p>Un anno di amore, ricordi e momenti preziosi.<br>
-        Come la carta, il nostro primo anno è un foglio che abbiamo riempito insieme.</p>
-      <p class="quote">"L'amore è come la carta: fragile all'apparenza, ma capace di custodire per sempre le parole più importanti."</p>
+        <p>Un anno di amore, ricordi e momenti preziosi.<br>
+            Come la carta, il nostro primo anno è un foglio che abbiamo riempito insieme.</p>
+        <p class="quote">"L'amore è come la carta: fragile all'apparenza, ma capace di custodire per sempre le parole più importanti."</p>
 
-      <div class="scroll-hint">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-        Scorri per scoprire
-      </div>
+        <div class="scroll-hint">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+            Scorri per scoprire
+        </div>
     </header>
 
     <!-- INTRO / LETTER -->
     <section class="intro-section">
-      <div class="letter">
-        <div class="stamp">
-          <div class="heart">💗</div>
-          <span>AMORE ∞</span>
+        <div class="letter">
+            <div class="stamp">
+                <div class="heart">💗</div>
+                <span>AMORE ∞</span>
+            </div>
+            <h2>📜 La Nostra Storia</h2>
+            <p>Si dice che il primo anno di matrimonio siano le <strong>Nozze di Carta</strong>. 
+                La carta, fragile e delicata, ma anche il supporto su cui si scrivono le promesse più importanti.</p>
+            <p>Come la carta, il nostro primo anno è stato un foglio bianco che abbiamo riempito insieme, 
+                parola dopo parola, ricordo dopo ricordo, amore dopo amore.</p>
+            <p>Questa timeline raccoglie i momenti più belli del nostro percorso 
+                fino al giorno del nostro <em>"Sì"</em>. 💍</p>
         </div>
-        <h2>📜 La Nostra Storia</h2>
-        <p>Si dice che il primo anno di matrimonio siano le <strong>Nozze di Carta</strong>. 
-          La carta, fragile e delicata, ma anche il supporto su cui si scrivono le promesse più importanti.</p>
-        <p>Come la carta, il nostro primo anno è stato un foglio bianco che abbiamo riempito insieme, 
-          parola dopo parola, ricordo dopo ricordo, amore dopo amore.</p>
-        <p>Questa timeline raccoglie i momenti più belli del nostro percorso 
-          fino al giorno del nostro <em>"Sì"</em>. 💍</p>
-      </div>
     </section>
 
     <!-- TIMELINE -->
     <section class="timeline-section">
-      <h2>🕊️ La Nostra Timeline</h2>
-      <p class="subtitle">Ogni momento, un ricordo. Ogni ricordo, un pezzo di carta che custodisce il nostro amore.</p>
+        <h2>🕊️ La Nostra Timeline</h2>
+        <p class="subtitle">Ogni momento, un ricordo. Ogni ricordo, un pezzo di carta che custodisce il nostro amore.</p>
 
-      <div class="timeline" id="timeline">
-        <!-- Items will be generated by JavaScript -->
-      </div>
+        <div class="timeline" id="timeline">
+            <!-- Items will be generated by JavaScript -->
+        </div>
 
-      <div class="timeline-end">
-        <div class="seal">∞</div>
-        <p>...e la storia continua</p>
-      </div>
+        <div class="timeline-end">
+            <div class="seal">∞</div>
+            <p>...e la storia continua</p>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="envelope">💌</div>
-      <h3>Per Sempre</h3>
-      <p>Questo è solo il primo capitolo della nostra storia d'amore. 
-        Tanti altri anni di carta, di parole scritte insieme, di pagine da riempire.</p>
-      
-      <div class="header-divider">
-        <div class="line"></div>
-        <span>💕</span>
-        <div class="line"></div>
-      </div>
+        <div class="envelope">💌</div>
+        <h3>Per Sempre</h3>
+        <p>Questo è solo il primo capitolo della nostra storia d'amore. 
+            Tanti altri anni di carta, di parole scritte insieme, di pagine da riempire.</p>
+        
+        <div class="header-divider">
+            <div class="line"></div>
+            <span>💕</span>
+            <div class="line"></div>
+        </div>
 
-      <p class="signature">Con tutto il mio amore</p>
-      <p class="credits">💌 Nozze di Carta — Primo Anniversario 💌</p>
+        <p class="signature">Con tutto il mio amore</p>
+        <p class="credits">💌 Nozze di Carta — Primo Anniversario 💌</p>
     </footer>
 
     <script>
-      // ===== DATI DELLA TIMELINE =====
-      // Modifica qui per aggiungere le tue foto e date!
-      // Per aggiungere una foto, metti il percorso nel campo "photo"
-      // Esempio: photo: "images/foto1.jpg" (metti le foto nella cartella public/images/)
-      
-      const timelineData = [
+        // ===== DATI DELLA TIMELINE =====
+        // Modifica qui per aggiungere le tue foto e date!
+        // Per aggiungere una foto, metti il percorso nel campo "photo"
+        // Esempio: photo: "images/foto1.jpg" (metti le foto nella cartella public/images/)
+        
+        const timelineData = [
         {
           date: "19 Aprile 2017",
           title: "La nostra prima uscita",
@@ -647,69 +657,70 @@
         },
       ];
 
-      // ===== GENERAZIONE TIMELINE =====
-      function createTimeline() {
-        const container = document.getElementById('timeline');
-        
-        timelineData.forEach((item, index) => {
-          const rotation = (Math.random() * 4 - 2).toFixed(1);
-          
-          const timelineItem = document.createElement('div');
-          timelineItem.className = 'timeline-item';
-          timelineItem.style.transitionDelay = `${index * 0.15}s`;
+        // ===== GENERAZIONE TIMELINE =====
+        function createTimeline() {
+            const container = document.getElementById('timeline');
+            
+            timelineData.forEach((item, index) => {
+                const rotation = (Math.random() * 4 - 2).toFixed(1);
+                
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                timelineItem.style.transitionDelay = `${index * 0.15}s`;
 
-          const photoContent = item.photo 
-            ? `<img src="${item.photo}" alt="${item.title}">`
-            : `<div class="placeholder">
-                 <div class="icon">💕</div>
-                 <p>Aggiungi la tua foto</p>
-               </div>`;
+                const photoContent = item.photo 
+                    ? `<img src="${item.photo}" alt="${item.title}">`
+                    : `<div class="placeholder">
+                            <div class="icon">💕</div>
+                            <p>Aggiungi la tua foto</p>
+                        </div>`;
 
-          timelineItem.innerHTML = `
-            <div class="timeline-content">
-              <div class="polaroid" style="transform: rotate(${rotation}deg)">
-                <div class="polaroid-img">
-                  ${photoContent}
-                </div>
-                <p class="polaroid-date">${item.date}</p>
-              </div>
-              <div class="timeline-text">
-                <span class="date-badge">✉ ${item.date}</span>
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-              </div>
-            </div>
-            <div class="timeline-dot"></div>
-            <div class="timeline-spacer"></div>
-          `;
+                timelineItem.innerHTML = `
+                    <div class="timeline-content">
+                        <div class="polaroid" style="transform: rotate(${rotation}deg)">
+                            <div class="polaroid-img">
+                                ${photoContent}
+                            </div>
+                            <p class="polaroid-date">${item.date}</p>
+                        </div>
+                        <div class="timeline-text">
+                            <span class="date-badge">✉ ${item.date}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-spacer"></div>
+                `;
 
-          container.appendChild(timelineItem);
+                container.appendChild(timelineItem);
+            });
+        }
+
+        // ===== ANIMAZIONE SCROLL =====
+        function observeTimeline() {
+            const items = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            items.forEach(item => observer.observe(item));
+        }
+
+        // ===== AVVIO =====
+        document.addEventListener('DOMContentLoaded', () => {
+            createTimeline();
+            observeTimeline();
         });
-      }
-
-      // ===== ANIMAZIONE SCROLL =====
-      function observeTimeline() {
-        const items = document.querySelectorAll('.timeline-item');
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        }, { threshold: 0.2 });
-
-        items.forEach(item => observer.observe(item));
-      }
-
-      // ===== AVVIO =====
-      document.addEventListener('DOMContentLoaded', () => {
-        createTimeline();
-        observeTimeline();
-      });
     </script>
 
+    <!-- Necessario per il build di Vite - non visibile -->
     <div id="root" style="display:none;"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+</body>
 </html>
